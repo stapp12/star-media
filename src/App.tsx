@@ -13,6 +13,9 @@ import AiStudio from './pages/guides/AiStudio'
 import ChatGPTGuide from './pages/guides/ChatGPTGuide'
 import ContentGuide from './pages/guides/ContentGuide'
 import TikTokGuide from './pages/guides/TikTokGuide'
+import AiBusinessGuide from './pages/guides/AiBusinessGuide'
+import AutomationsGuide from './pages/guides/AutomationsGuide'
+import WebCourseGuide from './pages/guides/WebCourseGuide'
 
 export default function App() {
   const { dir } = useLang()
@@ -39,6 +42,9 @@ export default function App() {
         <Route path="/chatgpt-guide" element={<ChatGPTGuide />} />
         <Route path="/content-guide" element={<ContentGuide />} />
         <Route path="/tiktok-guide" element={<TikTokGuide />} />
+        <Route path="/ai-business" element={<AiBusinessGuide />} />
+        <Route path="/automations" element={<AutomationsGuide />} />
+        <Route path="/web-course" element={<WebCourseGuide />} />
       </Routes>
       <Footer />
       <WhatsApp />

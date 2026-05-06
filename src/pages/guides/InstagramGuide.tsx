@@ -6,7 +6,7 @@ export default function InstagramGuide() {
       emoji="📱"
       badge="free"
       title="מדריך אינסטגרם"
-      subtitle="מאפס לסטארס — המדריך המלא"
+      subtitle="מאפס לסטארס - המדריך המלא"
       description="כל מה שצריך לדעת כדי לבנות נוכחות חזקה באינסטגרם, להגדיל עוקבים ולהפוך את הפרופיל שלך למכונת מכירות."
       sections={[
         {
@@ -22,7 +22,7 @@ export default function InstagramGuide() {
         {
           emoji: '📸',
           title: 'תוכן שעובד',
-          content: '• Reels: ה-algorithm מעדיף וידאו קצר — 15-30 שניות, עם הוק חזק ב-3 שניות הראשונות\n• Carousels: שמירה גבוהה ומעורבות — מושלם למדריכים וטיפים\n• Stories: יומיות, אותנטיות, עם סקרים ושאלות\n• Posts: 3-5 בשבוע, באיכות גבוהה\n\nכלל הזהב: 80% ערך + 20% מכירות',
+          content: '• Reels: ה-algorithm מעדיף וידאו קצר - 15-30 שניות, עם הוק חזק ב-3 שניות הראשונות\n• Carousels: שמירה גבוהה ומעורבות - מושלם למדריכים וטיפים\n• Stories: יומיות, אותנטיות, עם סקרים ושאלות\n• Posts: 3-5 בשבוע, באיכות גבוהה\n\nכלל הזהב: 80% ערך + 20% מכירות',
         },
         {
           emoji: '📅',
@@ -32,7 +32,7 @@ export default function InstagramGuide() {
         {
           emoji: '📊',
           title: 'ניתוח ביצועים',
-          content: 'מדדים שחשוב לעקוב אחריהם:\n• Reach: כמה אנשים ראו את התוכן\n• Engagement Rate: (לייקים+תגובות+שיתופים)/עוקבים × 100\n• Saves: אינדיקטור חזק לאיכות התוכן\n• Profile Visits: כמה עברו לפרופיל\n• Follower Growth: גדילה שבועית/חודשית\n\nמינימום 3-4% engagement rate זה טוב. מעל 6% — מעולה.',
+          content: 'מדדים שחשוב לעקוב אחריהם:\n• Reach: כמה אנשים ראו את התוכן\n• Engagement Rate: (לייקים+תגובות+שיתופים)/עוקבים × 100\n• Saves: אינדיקטור חזק לאיכות התוכן\n• Profile Visits: כמה עברו לפרופיל\n• Follower Growth: גדילה שבועית/חודשית\n\nמינימום 3-4% engagement rate זה טוב. מעל 6% - מעולה.',
         },
         {
           emoji: '🚀',

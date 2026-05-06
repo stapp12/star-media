@@ -7,7 +7,7 @@ export default function AiStudio() {
       badge="paid"
       title="קורס AI Studio"
       subtitle="יצירת וידאו מקצועי עם כלי AI"
-      description="הקורס שלמד לך ליצור סרטוני שיווק, תוכן ואווטאר AI ברמה סטודיו — בלי מצלמה, בלי ציוד, בלי ניסיון."
+      description="הקורס שלמד לך ליצור סרטוני שיווק, תוכן ואווטאר AI ברמה סטודיו - בלי מצלמה, בלי ציוד, בלי ניסיון."
       sections={[
         {
           emoji: '🎥',
@@ -22,7 +22,7 @@ export default function AiStudio() {
         {
           emoji: '📋',
           title: 'מבנה הקורס',
-          content: 'מודול 1: בסיסי AI Video — מה אפשרי היום\nמודול 2: HeyGen מאפס לאווטאר מלא\nמודול 3: Script Writing עם AI\nמודול 4: Voice Cloning ב-ElevenLabs\nמודול 5: עריכה ב-CapCut AI\nמודול 6: הפצה ואופטימיזציה\nמודול 7: אוטומציה של כל התהליך',
+          content: 'מודול 1: בסיסי AI Video - מה אפשרי היום\nמודול 2: HeyGen מאפס לאווטאר מלא\nמודול 3: Script Writing עם AI\nמודול 4: Voice Cloning ב-ElevenLabs\nמודול 5: עריכה ב-CapCut AI\nמודול 6: הפצה ואופטימיזציה\nמודול 7: אוטומציה של כל התהליך',
         },
         {
           emoji: '💡',

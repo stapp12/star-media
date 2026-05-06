@@ -38,27 +38,6 @@ function Stars() {
   return <canvas ref={ref} style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }} />
 }
 
-/* ── Counter ─────────────────────────────────────────── */
-function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
-  const [v, setV] = useState(0)
-  const el = useRef<HTMLSpanElement>(null)
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return; obs.disconnect()
-      const t0 = performance.now(), dur = 2000
-      const tick = (now: number) => {
-        const p = Math.min((now - t0) / dur, 1)
-        const ease = 1 - Math.pow(1 - p, 3)
-        setV(Math.round(ease * to))
-        if (p < 1) requestAnimationFrame(tick)
-      }
-      requestAnimationFrame(tick)
-    }, { threshold: 0.5 })
-    if (el.current) obs.observe(el.current)
-    return () => obs.disconnect()
-  }, [to])
-  return <span ref={el}>{v}{suffix}</span>
-}
 
 /* ── Fade wrapper ────────────────────────────────────── */
 const Fade = ({ children, delay = 0, y = 30, className = '', style }: {
@@ -86,8 +65,8 @@ export default function Home() {
   const mouseY = useMotionValue(0)
   const spotX = useSpring(mouseX, { damping: 30, stiffness: 200 })
   const spotY = useSpring(mouseY, { damping: 30, stiffness: 200 })
-  const spotOffsetX = useTransform(spotX, v => v - 250)
-  const spotOffsetY = useTransform(spotY, v => v - 250)
+  const spotOffsetX = useTransform(spotX, (v: number) => v - 250)
+  const spotOffsetY = useTransform(spotY, (v: number) => v - 250)
 
   const [form, setForm] = useState({ name: '', phone: '', email: '', service: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'err'>('idle')

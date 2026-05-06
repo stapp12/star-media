@@ -16,6 +16,7 @@ import TikTokGuide from './pages/guides/TikTokGuide'
 import AiBusinessGuide from './pages/guides/AiBusinessGuide'
 import AutomationsGuide from './pages/guides/AutomationsGuide'
 import WebCourseGuide from './pages/guides/WebCourseGuide'
+import SocialSellingGuide from './pages/guides/SocialSellingGuide'
 
 export default function App() {
   const { dir } = useLang()
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/ai-business" element={<AiBusinessGuide />} />
         <Route path="/automations" element={<AutomationsGuide />} />
         <Route path="/web-course" element={<WebCourseGuide />} />
+        <Route path="/social-selling" element={<SocialSellingGuide />} />
       </Routes>
       <Footer />
       <WhatsApp />

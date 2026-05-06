@@ -128,11 +128,13 @@ export default function Home() {
 
   const courses = [
     { emoji: '🤖', title: L('AI לעסקים - מ-0 ליחידים', 'AI for Business - Zero to Expert'), desc: L('המדריך המקיף לשימוש ב-AI לצמיחת עסק', 'The complete guide to using AI for business growth'), price: '₪497', free: false, href: '/ai-business' },
-    { emoji: '🎬', title: 'AI Video Creator',                                                  desc: L('צור וידאו מקצועי עם בינה מלאכותית לכל פלטפורמה', 'Create professional video with AI for every platform'), price: '₪397', free: false, href: '/ai-studio' },
-    { emoji: '⚡', title: L('אוטומציות לעסקים', 'Business Automations'),                       desc: L('תהליכים אוטומטיים שחוסכים שעות עבודה בשבוע', 'Automated processes that save hours of work per week'), price: '₪597', free: false, href: '/automations' },
-    { emoji: '🌐', title: L('בניית אתרים עם AI', 'Build Websites with AI'),                   desc: L('בנה אתר מקצועי תוך יום עם כלי AI מתקדמים', 'Build a professional website in a day with advanced AI tools'), price: '₪297', free: false, href: '/web-course' },
-    { emoji: '📱', title: L('מדריך אינסטגרם', 'Instagram Guide'),                             desc: L('מ-0 ל-10K עוקבים - מדריך שלב אחר שלב', 'From 0 to 10K followers - step by step guide'), price: L('חינם', 'Free'), free: true, href: '/instagram-guide' },
-    { emoji: '💬', title: L('ChatGPT לעסקים', 'ChatGPT for Business'),                        desc: L('100+ פרומפטים שישנו את אופן העבודה שלך', '100+ prompts that will change the way you work'), price: L('חינם', 'Free'), free: true, href: '/chatgpt-guide' },
+    { emoji: '🎬', title: L('קורס AI Studio', 'AI Studio Course'),                           desc: L('צור סרטוני שיווק ואווטאר AI ברמה סטודיו', 'Create marketing videos and AI avatar at studio level'), price: '₪397', free: false, href: '/ai-studio' },
+    { emoji: '🎨', title: L('קורס Claude Design', 'Claude Design Course'),                   desc: L('עיצוב ממשקים, לוגואים ואתרים עם AI מתקדם', 'Design interfaces, logos and websites with advanced AI'), price: '₪597', free: false, href: '/claude-design-course' },
+    { emoji: '💰', title: L('Social Selling', 'Social Selling'),                              desc: L('מכירות אותנטיות דרך רשתות חברתיות שעובדות', 'Authentic social media sales that actually work'), price: '₪297', free: false, href: '/social-selling' },
+    { emoji: '⚡', title: L('אוטומציות לעסקים', 'Business Automations'),                     desc: L('תהליכים אוטומטיים שחוסכים שעות עבודה בשבוע', 'Automated processes that save hours of work per week'), price: '₪597', free: false, href: '/automations' },
+    { emoji: '🌐', title: L('בניית אתרים עם AI', 'Build Websites with AI'),                 desc: L('בנה אתר מקצועי תוך יום עם כלי AI מתקדמים', 'Build a professional website in a day with advanced AI tools'), price: '₪297', free: false, href: '/web-course' },
+    { emoji: '📱', title: L('מדריך אינסטגרם', 'Instagram Guide'),                           desc: L('מ-0 ל-10K עוקבים - מדריך שלב אחר שלב', 'From 0 to 10K followers - step by step guide'), price: L('חינם', 'Free'), free: true, href: '/instagram-guide' },
+    { emoji: '💬', title: L('ChatGPT לעסקים', 'ChatGPT for Business'),                      desc: L('100+ פרומפטים שישנו את אופן העבודה שלך', '100+ prompts that will change the way you work'), price: L('חינם', 'Free'), free: true, href: '/chatgpt-guide' },
   ]
 
   return (

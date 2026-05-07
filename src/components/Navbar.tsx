@@ -15,10 +15,11 @@ export default function Navbar() {
   }, [])
 
   const links = [
-    { label: L('שירותים', 'Services'), href: '/#services' },
-    { label: L('אתרים', 'Websites'),   href: '/#websites' },
-    { label: L('קורסים', 'Courses'),   href: '/#courses' },
-    { label: L('צור קשר', 'Contact'),  href: '/#contact' },
+    { label: L('שירותים', 'Services'),       href: '/#services' },
+    { label: L('אתרים', 'Websites'),         href: '/#websites' },
+    { label: L('קורסים', 'Courses'),         href: '/#courses' },
+    { label: L('Social Selling', 'Social Selling'), href: '/social-selling' },
+    { label: L('צור קשר', 'Contact'),        href: '/#contact' },
   ]
 
   const navStyle: React.CSSProperties = {

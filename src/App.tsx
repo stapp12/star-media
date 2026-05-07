@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useScroll, motion } from 'framer-motion'
 import { Routes, Route } from 'react-router-dom'
 import { useLang } from './context/LangContext'
@@ -15,9 +14,16 @@ import AiBusinessGuide from './pages/guides/AiBusinessGuide'
 import AutomationsGuide from './pages/guides/AutomationsGuide'
 import WebCourseGuide from './pages/guides/WebCourseGuide'
 
-function StaticPage({ href }: { href: string }) {
-  useEffect(() => { window.location.replace(href) }, [href])
-  return <div style={{ background: '#060606', minHeight: '100vh' }} />
+function LandingFrame({ src }: { src: string }) {
+  return (
+    <div style={{ paddingTop: '60px', background: '#060606' }}>
+      <iframe
+        src={src}
+        style={{ width: '100%', height: 'calc(100vh - 60px)', border: 'none', display: 'block' }}
+        title="Landing page"
+      />
+    </div>
+  )
 }
 
 export default function App() {
@@ -36,19 +42,22 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/instagram-guide" element={<InstagramGuide />} />
+
+        {/* Free guides - React pages with full Navbar/Footer */}
+        <Route path="/instagram-guide"   element={<InstagramGuide />} />
         <Route path="/presentation-guide" element={<PresentationGuide />} />
-        <Route path="/chatgpt-guide" element={<ChatGPTGuide />} />
-        <Route path="/content-guide" element={<ContentGuide />} />
-        <Route path="/tiktok-guide" element={<TikTokGuide />} />
-        <Route path="/ai-business" element={<AiBusinessGuide />} />
-        <Route path="/automations" element={<AutomationsGuide />} />
-        <Route path="/web-course" element={<WebCourseGuide />} />
-        {/* Pages with full HTML landing pages */}
-        <Route path="/ai-studio" element={<StaticPage href="/ai-studio-landing.html" />} />
-        <Route path="/claude-design-course" element={<StaticPage href="/claude-design-landing.html" />} />
-        <Route path="/secret" element={<StaticPage href="/secret-guide.html" />} />
-        <Route path="/social-selling" element={<StaticPage href="/social-selling-landing.html" />} />
+        <Route path="/chatgpt-guide"     element={<ChatGPTGuide />} />
+        <Route path="/content-guide"     element={<ContentGuide />} />
+        <Route path="/tiktok-guide"      element={<TikTokGuide />} />
+        <Route path="/ai-business"       element={<AiBusinessGuide />} />
+        <Route path="/automations"       element={<AutomationsGuide />} />
+        <Route path="/web-course"        element={<WebCourseGuide />} />
+
+        {/* Paid courses - HTML landing pages inside iframe (keeps Navbar visible) */}
+        <Route path="/ai-studio"          element={<LandingFrame src="/ai-studio-landing.html" />} />
+        <Route path="/claude-design-course" element={<LandingFrame src="/claude-design-landing.html" />} />
+        <Route path="/secret"             element={<LandingFrame src="/secret-guide.html" />} />
+        <Route path="/social-selling"     element={<LandingFrame src="/social-selling-landing.html" />} />
       </Routes>
       <Footer />
       <WhatsApp />

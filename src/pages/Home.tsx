@@ -488,18 +488,19 @@ export default function Home() {
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                   {[
-                    { icon: '📞', label: L('טלפון', 'Phone'),    value: '050-123-4567' },
-                    { icon: '✉️', label: L('אימייל', 'Email'),   value: 'info@starmedia.media' },
-                    { icon: '💬', label: 'WhatsApp',              value: L('שלחו הודעה', 'Send a message') },
-                    { icon: '📍', label: L('מיקום', 'Location'), value: L('ישראל', 'Israel') },
-                  ].map(({ icon, label, value }) => (
-                    <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.9rem 1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(212,175,55,0.08)', borderRadius: '14px' }}>
+                    { icon: '📞', label: L('טלפון', 'Phone'),    value: '055-727-5195',           href: 'tel:+972557275195' },
+                    { icon: '✉️', label: L('אימייל', 'Email'),   value: 'starmedia994@gmail.com', href: 'mailto:starmedia994@gmail.com' },
+                    { icon: '💬', label: 'WhatsApp',              value: L('שלחו הודעה', 'Send a message'), href: 'https://wa.me/972557275195' },
+                    { icon: '📍', label: L('מיקום', 'Location'), value: L('ישראל', 'Israel'),     href: undefined },
+                  ].map(({ icon, label, value, href }) => (
+                    <a key={label} href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer"
+                      style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.9rem 1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(212,175,55,0.08)', borderRadius: '14px', textDecoration: 'none', cursor: href ? 'pointer' : 'default' }}>
                       <span style={{ fontSize: '1.3rem', width: 36, textAlign: 'center', flexShrink: 0 }}>{icon}</span>
                       <div>
                         <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.68rem', marginBottom: '2px', letterSpacing: '0.05em' }}>{label}</div>
                         <div style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.88rem', fontWeight: 500 }}>{value}</div>
                       </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useLang } from '../context/LangContext'
 
 export default function Navbar() {
@@ -7,6 +8,8 @@ export default function Navbar() {
   const L = (he: string, en: string) => lang === 'he' ? he : en
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40)
@@ -15,12 +18,24 @@ export default function Navbar() {
   }, [])
 
   const links = [
-    { label: L('שירותים', 'Services'),       href: '/#services' },
-    { label: L('אתרים', 'Websites'),         href: '/#websites' },
-    { label: L('קורסים', 'Courses'),         href: '/#courses' },
-    { label: L('Social Selling', 'Social Selling'), href: '/social-selling' },
-    { label: L('צור קשר', 'Contact'),        href: '/#contact' },
+    { label: L('שירותים', 'Services'), href: '/#services' },
+    { label: L('אתרים', 'Websites'),   href: '/#websites' },
+    { label: L('קורסים', 'Courses'),   href: '/#courses' },
+    { label: L('צור קשר', 'Contact'),  href: '/#contact' },
   ]
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('/#')) return
+    e.preventDefault()
+    const section = href.slice(2)
+    if (location.pathname === '/') {
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/')
+      setTimeout(() => document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' }), 150)
+    }
+    setOpen(false)
+  }
 
   const navStyle: React.CSSProperties = {
     position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
@@ -52,6 +67,7 @@ export default function Navbar() {
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="hidden-mobile">
           {links.map(l => (
             <a key={l.href} href={l.href} style={linkStyle}
+              onClick={e => handleClick(e, l.href)}
               onMouseEnter={e => { (e.target as HTMLElement).style.color = '#d4af37' }}
               onMouseLeave={e => { (e.target as HTMLElement).style.color = 'rgba(255,255,255,0.65)' }}>
               {l.label}
@@ -83,7 +99,7 @@ export default function Navbar() {
       {open && (
         <div style={{ background: 'rgba(6,6,6,0.97)', backdropFilter: 'blur(20px)', borderTop: '1px solid rgba(212,175,55,0.1)', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {links.map(l => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+            <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
               style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', fontWeight: 500, textDecoration: 'none', padding: '0.75rem 0', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
               {l.label}
             </a>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight, Send } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { useLang } from '../../context/LangContext'
 import SEOHead from '../../components/SEOHead'
 
@@ -11,7 +12,16 @@ interface Props {
 
 export default function GuidePage({ emoji, title, subtitle, description, badge, sections, ctaText, ctaHref }: Props) {
   const { dir } = useLang()
+  const navigate = useNavigate()
   const Arrow = dir === 'rtl' ? ArrowLeft : ArrowRight
+
+  const goToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('/#')) return
+    e.preventDefault()
+    const section = href.slice(2)
+    navigate('/')
+    setTimeout(() => document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' }), 150)
+  }
 
   return (
     <div dir={dir} style={{ background: '#060606', minHeight: '100vh', paddingTop: '6rem', paddingBottom: '5rem' }}>
@@ -80,10 +90,10 @@ export default function GuidePage({ emoji, title, subtitle, description, badge, 
             {dir==='rtl' ? 'Star Media מחכה לך עם עוד תוכן, קורסים ושירותים מטורפים.' : 'Star Media is waiting with more amazing content, courses and services.'}
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={ctaHref ?? '/#contact'} className="btn-gold" style={{ padding: '0.75rem 1.75rem', borderRadius: '999px', fontSize: '0.85rem', textDecoration: 'none' }}>
+            <a href={ctaHref ?? '/#contact'} onClick={e => goToSection(e, ctaHref ?? '/#contact')} className="btn-gold" style={{ padding: '0.75rem 1.75rem', borderRadius: '999px', fontSize: '0.85rem', textDecoration: 'none' }}>
               <Send size={14} />{ctaText ?? (dir==='rtl' ? 'צור קשר עכשיו' : 'Contact Us')}
             </a>
-            <a href="/#courses" className="btn-ghost-gold" style={{ padding: '0.75rem 1.75rem', borderRadius: '999px', fontSize: '0.85rem', textDecoration: 'none' }}>
+            <a href="/#courses" onClick={e => goToSection(e, '/#courses')} className="btn-ghost-gold" style={{ padding: '0.75rem 1.75rem', borderRadius: '999px', fontSize: '0.85rem', textDecoration: 'none' }}>
               {dir==='rtl' ? 'כל הקורסים' : 'All Courses'} <Arrow size={14} />
             </a>
           </div>

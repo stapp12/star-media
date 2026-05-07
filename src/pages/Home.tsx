@@ -128,8 +128,8 @@ export default function Home() {
 
   const courses = [
     { emoji: '🤖', title: L('AI לעסקים - מ-0 ליחידים', 'AI for Business - Zero to Expert'), desc: L('המדריך המקיף לשימוש ב-AI לצמיחת עסק', 'The complete guide to using AI for business growth'), price: '₪497', free: false, href: '/ai-business' },
-    { emoji: '🎬', title: L('קורס AI Studio', 'AI Studio Course'),                           desc: L('צור סרטוני שיווק ואווטאר AI ברמה סטודיו', 'Create marketing videos and AI avatar at studio level'), price: '₪397', free: false, href: '/ai-studio' },
-    { emoji: '🎨', title: L('קורס Claude Design', 'Claude Design Course'),                   desc: L('עיצוב ממשקים, לוגואים ואתרים עם AI מתקדם', 'Design interfaces, logos and websites with advanced AI'), price: '₪597', free: false, href: '/claude-design-course' },
+    { emoji: '🎬', title: L('קורס AI Studio', 'AI Studio Course'),                           desc: L('צור סרטוני שיווק ואווטאר AI ברמה סטודיו', 'Create marketing videos and AI avatar at studio level'), price: '89₪', free: false, href: '/ai-studio' },
+    { emoji: '🎨', title: L('קורס Claude Design', 'Claude Design Course'),                   desc: L('עיצוב ממשקים, לוגואים ואתרים עם AI מתקדם', 'Design interfaces, logos and websites with advanced AI'), price: '49₪', free: false, href: '/claude-design-course' },
     { emoji: '💰', title: L('Social Selling', 'Social Selling'),                              desc: L('מכירות אותנטיות דרך רשתות חברתיות שעובדות', 'Authentic social media sales that actually work'), price: '₪297', free: false, href: '/social-selling' },
     { emoji: '⚡', title: L('אוטומציות לעסקים', 'Business Automations'),                     desc: L('תהליכים אוטומטיים שחוסכים שעות עבודה בשבוע', 'Automated processes that save hours of work per week'), price: '₪597', free: false, href: '/automations' },
     { emoji: '🌐', title: L('בניית אתרים עם AI', 'Build Websites with AI'),                 desc: L('בנה אתר מקצועי תוך יום עם כלי AI מתקדמים', 'Build a professional website in a day with advanced AI tools'), price: '₪297', free: false, href: '/web-course' },

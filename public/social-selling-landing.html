@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -1389,6 +1389,58 @@ function showToast(msg){
 function openDrive(){
   window.open('https://docs.google.com/document/d/1vVaUr8AqZl-HiMkjRB-tE3jsYvjKexyL/edit?usp=sharing','_blank');
 }
+</script>
+<script>
+(function(){
+  const lang = new URLSearchParams(window.location.search).get('lang') || 'he';
+  if (lang !== 'en') return;
+  document.documentElement.setAttribute('dir','ltr');
+  document.documentElement.setAttribute('lang','en');
+  document.body.style.direction = 'ltr';
+  document.title = 'Star Media | Social Selling AI - Course Portal';
+
+  const T = {
+    loginBrand: 'Star Media', loginTitle: 'Social Selling AI',
+    loginSub: 'Welcome to the learning platform.<br>Enter your access credentials.',
+    loginBtn: 'Enter Course →',
+    loginError: 'Username or password incorrect. Try again.',
+    logoutBtn: 'Logout',
+    heroTag: 'Learning Portal',
+    h1: 'How to Sell on Social Media<br><span>in the AI Era</span>',
+    heroSub: 'Eight practical modules - from your first product to daily sales. Everything you need, step by step.',
+    progText0: '0 of 8 modules completed',
+    progHint: 'Let\'s go - first module is waiting for you',
+    sectionTitle: '📚 Course Curriculum',
+    completeBtn: 'Mark Complete ✓',
+    completedBtn: '✓ Completed'
+  };
+
+  function q(sel) { return document.querySelector(sel); }
+  function setHTML(sel,html) { const el=q(sel); if(el) el.innerHTML=html; }
+  function setText(sel,txt) { const el=q(sel); if(el) el.textContent=txt; }
+
+  setText('.login-brand', T.loginBrand);
+  setText('.login-title', T.loginTitle);
+  setHTML('.login-sub', T.loginSub);
+  const loginBtn = q('#login-btn'); if (loginBtn) loginBtn.textContent = T.loginBtn;
+  setText('#login-error', T.loginError);
+  const logoutBtn = q('.logout-btn'); if (logoutBtn) logoutBtn.textContent = T.logoutBtn;
+  setText('.hero-tag', T.heroTag);
+  const h1 = q('.hero h1'); if (h1) h1.innerHTML = T.h1;
+  setText('.hero-sub', T.heroSub);
+  setText('.section-title', T.sectionTitle);
+  const progText = q('#prog-text'); if (progText) progText.textContent = T.progText0;
+  const progHint = progText && progText.nextElementSibling; if (progHint) progHint.textContent = T.progHint;
+
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll('.complete-btn:not([data-translated])').forEach(btn => {
+      btn.setAttribute('data-translated','1');
+      if (btn.classList.contains('done')) btn.textContent = T.completedBtn;
+      else btn.textContent = T.completeBtn;
+    });
+  });
+  observer.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>

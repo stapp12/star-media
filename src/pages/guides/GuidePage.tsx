@@ -11,7 +11,8 @@ interface Props {
 }
 
 export default function GuidePage({ emoji, title, subtitle, description, badge, sections, ctaText, ctaHref }: Props) {
-  const { dir } = useLang()
+  const { lang, dir } = useLang()
+  const L = (he: string, en: string) => lang === 'he' ? he : en
   const navigate = useNavigate()
   const Arrow = dir === 'rtl' ? ArrowLeft : ArrowRight
 
@@ -42,7 +43,7 @@ export default function GuidePage({ emoji, title, subtitle, description, badge, 
           <motion.div initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.6 }}
             style={{ marginBottom: '1rem' }}>
             <span className={badge==='free' ? 'badge-free' : 'badge-paid'}>
-              {badge === 'free' ? '🎁 חינם לגמרי' : '⭐ פרימיום'}
+              {badge === 'free' ? L('🎁 חינם לגמרי', '🎁 100% Free') : L('⭐ פרימיום', '⭐ Premium')}
             </span>
           </motion.div>
           <motion.div initial={{ opacity:0, scale:0.8 }} animate={{ opacity:1, scale:1 }} transition={{ duration:0.7, delay:0.1 }}
